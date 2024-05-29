@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fib1=0;
+        let fib2=1;
+        let fibonacciNumber=0;
+        for (i = 2; i < 20; i++) {
+            fibonacciNumber=fib1+fib2;
+            fib1=fib2;
+            fib2=fibonacciNumber;
+            if(fibonacciNumber%5===0){
+               break; 
+            }    
+        }
+        document.write("Số đầu tiên trong dãy Fibonacci chia hết cho 5 là: "+fibonacciNumber);
+    </script>
+</body>
+</html>

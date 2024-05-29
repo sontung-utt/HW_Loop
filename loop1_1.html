@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="n">Nhập số Fibonacci muốn hiển thị</label>
+    <input type="number" id="n" placeholder="Nhập số" onchange="getNumber()">
+    <script>
+        function getNumber() {
+            let number = document.getElementById("n").value;
+            number = parseInt(number)+2;
+            let fib1 = 0;
+            let fib2 = 1;
+            let fibonacciNumber = 0;
+            document.write(number + " số trong dãy Fibonacci là: <br>");
+            document.write(fib1 + "<br>");
+            document.write(fib2 + "<br>");
+            for (i = 2; i < number; i++) {
+                fibonacciNumber = fib1 + fib2;
+                document.write(fibonacciNumber + "<br>");
+                fib1 = fib2;
+                fib2 = fibonacciNumber;
+            }
+        }
+    </script>
+</body>
+
+</html>

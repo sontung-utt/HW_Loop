@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính giá trị biểu thức</h1>
+    <input type="text" id="num" placeholder="Nhập số">
+    <button onclick="getMath()">Tính toán</button>
+    <p id="result"></p>
+    <script>
+        function getMath(){
+            let num = document.getElementById("num").value;
+            num = parseInt (num);
+            let sum = 0;
+            if(isNaN(num)||num<0){
+                document.getElementById("result").innerHTML = "Vui lòng nhập số nguyên dương";
+                return;
+            }
+            for (let i =1;i<=num; i++){
+                sum += i * (i+1);
+            }
+            
+            document.getElementById("result").innerHTML = "Tổng các tích của biểu thức từ 1 đến "+num+" là: "+sum;
+        }
+    </script>
+</body>
+</html>

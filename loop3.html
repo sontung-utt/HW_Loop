@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fib1 = 0;
+        let fib2 = 1;
+        let fibonacciNumber = 0;
+        document.write("20 số đầu tiên của dãy Fibonacci là: <br>" );
+        document.write(fib1 + "<br>");
+        document.write(fib2 + "<br>");
+        for (i = 2; i < 20; i++) {
+            fibonacciNumber = fib1 + fib2;
+            document.write(fibonacciNumber + "<br>");
+            fib1 = fib2;
+            fib2 = fibonacciNumber;
+        }
+
+    </script>
+</body>
+
+</html>

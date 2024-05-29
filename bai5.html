@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính giá trị biểu thức</h1>
+    <input type="text" id="num" placeholder="Nhập số">
+    <button onclick="getMath()">Tính toán</button>
+    <p id="result"></p>
+    <script>
+        function getMath(){
+            let num = document.getElementById("num").value;
+            if (isNaN(num)||num<0){
+                document.getElementById("result").innerHTML = "Vui lòng nhập số nguyên dương";
+                return;
+            }
+            let sum = 0;
+            for(let i = 1; i<=num; i++){
+                sum += 1/(Math.pow(i,3));
+            }
+            
+            sum = parseFloat(sum.toFixed(8));
+            document.getElementById("result").innerHTML = "Tổng của biểu thức là: "+sum;
+        }
+    </script>
+</body>
+</html>

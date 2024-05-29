@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Đếm số từ và kí tự trong câu</h3>
+    <textarea id="text" cols="60" rows="7" placeholder="Nhập thông tin ở đây"></textarea><br><br>
+    <button onclick="getCount()">Đếm</button>
+    <p id="result"></p>
+    <script>
+        function getCount() {
+            let text = document.getElementById("text").value;
+            let numText = 0;
+            for (let i = 0; i < text.length; i++) {
+                numText++;
+            }
+
+            let numWords = 0;
+            let inWord = false;
+            for (let i = 0; i < text.length; i++) {
+                if(text[i]!==" "&&text[i]!=="\n" && text[i]!=="\t"){
+                    if(!inWord) {
+                        numWords ++;
+                        inWord = true;
+                    }
+                } else {
+                    inWord = false;
+                }
+            }
+            let result = document.getElementById("result");
+            result.innerHTML = "Số từ là "+numWords+" và số kí tự là "+numText;
+        }
+    </script>
+</body>
+
+</html>

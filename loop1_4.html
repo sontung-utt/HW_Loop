@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="cd">Nhập chiều dài</label>
+    <input type="number" id="cd"><br><br>
+    <label for="cr">Nhập chiều rộng</label>
+    <input type="number" id="cr"><br><br>
+    <button onclick="getResult()">Hình chữ nhật 1</button>
+    <button onclick="getResult2()">Hình chữ nhật 2</button>
+    <script>
+        function getResult() {
+            let width = document.getElementById("cd").value;
+            let height = document.getElementById("cr").value;
+            let result = '';
+            for (let i = 0; i < height; i++) {
+                result += "*".repeat(width) + "\n";
+            }
+            console.log(result);
+        }
+        function getResult2() {
+            let width = document.getElementById("cd").value;
+            let height = document.getElementById("cr").value;
+            let result = '';
+            for (let i = 0; i < height; i++) {
+                if (i === 0 || i == height - 1) {
+                    result += "*".repeat(width) + "\n";
+                } else {
+                    result += "*" + " ".repeat(width - 2) + "*" + "\n";
+                }
+            }
+            console.log(result);
+        }
+    </script>
+</body>
+
+</html>

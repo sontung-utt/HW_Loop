@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Danh sách số Fibonacci</h3>
+    <input type="text" id="num" placeholder="Nhập số"><br><br>
+    <button onclick="getPrint()">In dãy Fibonacci</button>
+    <p id="result"></p>
+    <script>
+        function getPrint() {
+            let num = document.getElementById("num").value;
+            num = parseInt(num);
+            if (isNaN(num) || num < 0) {
+                document.getElementById("result").innerHTML = "Yêu cầu nhập số nguyên dương";
+                return;
+            }
+            let fib0 = 0, fib1 = 1, nextFib;
+            let result = fib0;
+
+            if (num >= 1) {
+                result += ", " + fib1;
+            }
+            //nextFib = fib0 + fib1;
+            /*while(nextFib<=num) {
+                result += ", " + nextFib;
+                fib0 = fib1;
+                fib1 = nextFib;
+                nextFib = fib0 + fib1;
+            }*/
+
+            for (nextFib=fib0+fib1; nextFib<=num; nextFib=fib0+fib1){
+                result += ", "+nextFib;
+                fib0=fib1;
+                fib1=nextFib;
+            }
+            
+            document.getElementById("result").innerHTML = "Dãy số đầu tiên của Fibonacci từ 0 đến " + num + " là: " + result;
+        }
+    </script>
+</body>
+
+</html>

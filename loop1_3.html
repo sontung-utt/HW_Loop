@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="triangle">Nhập chiều cao tam giác</label>
+    <input type="number" id="triangle" placeholder="Nhập số"><br><br>
+    <button onclick="getTriangle1()">Tam giác 1</button>
+    <button onclick="getTriangle2()">Tam giác 2</button>
+    <button onclick="getTriangle3()">Tam giác 3</button>
+    <button onclick="getTriangle4()">Tam giác 4</button>
+    <div id="result"></div>
+    <script>
+        function getTriangle1() {
+            let height = document.getElementById("triangle").value;
+            let result = document.getElementById("result");
+            for (let i = 1; i <= height; i++) {
+                console.log("*".repeat(i));
+                //document.write("*".repeat(i) + "</br>");
+            }
+        }
+        function getTriangle2() {
+            let height = document.getElementById("triangle").value;
+            for (let i = height; i >= 1; i--) {
+                console.log("*".repeat(i));
+                
+                //document.write("*".repeat(i) + "</br>");
+            }
+        }
+        function getTriangle3() {
+            let height = document.getElementById("triangle").value;
+            for (let i = 1; i <= height; i++) {
+                console.log(" ".repeat(height - i) + "*".repeat(i));
+                //document.write(" ".repeat(height - i) + "*".repeat(i) + "</br>");
+            }
+        }
+        function getTriangle4(){
+            let height = document.getElementById("triangle").value;
+            for(let i = height; i>=1; i--){
+                console.log(" ".repeat(height-i)+"*".repeat(i));
+            }
+        }
+    </script>
+
+</body>
+
+</html>

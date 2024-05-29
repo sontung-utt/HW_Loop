@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getStart()">Chơi</button>
+    <script>
+        function getStart() {
+            let min = +prompt("Nhập số nhỏ nhất bạn muốn bắt đầu");
+            let max = +prompt("Nhập số lớn nhất bạn muốn kết thúc");
+            let num_random = Math.random() * (max - min) + min;
+            num_random = parseInt(num_random);
+            console.log(num_random);
+            let num_guess = +prompt("Nhập số bạn muốn đoán giữa " + min + " và " + max);
+            let count = 1;
+
+            for (let i = 0; i < 5; i++) {
+                if (num_guess !== num_random) {
+                    count++;
+                    //console.log(i);
+                    if (count === 6) {
+                        alert("Bạn đã hết lượt đoán");
+                        break;
+                    } else if (count < 6) {
+                        if (num_guess < min || num_guess > max) {
+                            alert("Số nhập vào phải lớn hơn " + min + " và nhỏ hơn " + max);
+                        } else if (num_guess < num_random) {
+                            alert("Số bạn nhập nhỏ hơn số đã cho");
+                        } else if (num_guess > num_random) {
+                            alert("Số của bạn lớn hơn số đã cho");
+                        }
+                        num_guess = +prompt("Nhập số bạn muốn đoán giữa " + min + " và " + max);
+                    }
+                }
+            }
+            //if (num_guess === num_random) 
+            if (num_guess === num_random) {
+                document.write("Bạn đã đoán đúng số đó là: " + num_random + " sau " + count + " lần đoán");
+            } else {
+                document.write("Bạn hết số lần đoán!!!");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

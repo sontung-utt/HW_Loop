@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        let num = prompt("Nhập số lượng số nguyên tố cần in ra");
+        num = parseInt(num);
+
+        while (isNaN(num) || num <= 0) {
+            alert("Yêu cầu nhập số nguyên dương");
+            num = +prompt("Nhập số lượng số nguyên tố cần in ra");
+            num = parseInt(num);
+        }
+        document.write("Số lượng số nguyên tố cần in ra: " + num + "<br>");
+        let number = 2;
+        let count = 0;
+        /*while (count < num){
+            if(isPrime(number)){
+                document.write(number + "<br>");
+                count++;
+            }
+            number++;
+        }*/
+        for (let count = 0; count < num; number++) {
+            if (isPrime(number)) {
+                document.write(number + "<br>");
+                count++;
+            } 
+        }
+
+    </script>
+</body>
+
+</html>
